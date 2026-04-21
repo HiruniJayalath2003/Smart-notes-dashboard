@@ -10,12 +10,14 @@
 </head>
 
 <body class="body p-10">
-    <header class="hero flex items-center justify-between border-b">
+    <header class="hero flex items-center justify-between border-b border-gray-300">
         <h1 class="main-title text-2xl text-gray-800 font-bold">Smart Notes Dashboard</h1>
         <figure class="images flex items-center gap-x-7">
-            <div class="set flex items-center gap-x-3">
-                <img src="images/search.png" alt="search icon">
-                <p class="text">Search</p>
+            <div class="set flex items-center gap-x-3 border border-gray-300 p-1 border rounded-md ">
+                <img src="images/search.png" alt="search icon"
+                    class="search-btn">
+                <input type="text" placeholder="Search by title" class="search-area outline-none">
+                </search>
             </div>
             <div class="set flex items-center gap-x-3">
                 <img src="images/settings.png" alt="setting icon">
@@ -27,6 +29,14 @@
             </div>
         </figure>
     </header>
+    <form class="note-form flex flex-col p-5">
+        <input type="text" placeholder="Note Title" id="input-note-title"class="title p-2 border rounded-md border-gray-300 outline-none">
+        <div class="Description flex items-center justify-between pt-3 gap-x-2">
+            <input type="text" placeholder="Note Description" id="input-note-desc"class="add-desc flex-10 p-2 border rounded-md border-gray-300 outline-none">
+            <button class="submit flex-1 p-2 border border-green-500 rounded-md bg-green-300">Add Note</button>
+        </div>
+
+    </form>
 
     <script src="script.js"></script>
 </body>
