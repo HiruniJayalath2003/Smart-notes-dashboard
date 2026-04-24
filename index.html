@@ -13,30 +13,59 @@
     <header class="hero flex items-center justify-between border-b border-gray-300">
         <h1 class="main-title text-2xl text-gray-800 font-bold">Smart Notes Dashboard</h1>
         <figure class="images flex items-center gap-x-7">
-            <div class="set flex items-center gap-x-3 border border-gray-300 p-1 border rounded-md ">
-                <img src="images/search.png" alt="search icon"
-                    class="search-btn">
+            <div class="set flex items-center gap-x-3 border border-gray-300 p-1 border rounded-md" id="search">
+                <img src="images/search.png" alt="search icon" class="search-btn">
                 <input type="text" placeholder="Search by title" class="search-area outline-none">
                 </search>
             </div>
-            <div class="set flex items-center gap-x-3">
+            <div class="set flex items-center gap-x-3" id="settings">
                 <img src="images/settings.png" alt="setting icon">
                 <p class="text">Settings</p>
             </div>
-            <div class="set flex items-center gap-x-3">
+            <div class="set flex items-center gap-x-3" id="logout">
                 <img src="images/login.png" alt="login/logout icon">
                 <p class="text">Logout</p>
             </div>
         </figure>
     </header>
     <form class="note-form flex flex-col p-5">
-        <input type="text" placeholder="Note Title" id="input-note-title"class="title p-2 border rounded-md border-gray-300 outline-none">
-        <div class="Description flex items-center justify-between pt-3 gap-x-2">
-            <input type="text" placeholder="Note Description" id="input-note-desc"class="add-desc flex-10 p-2 border rounded-md border-gray-300 outline-none">
-            <button class="submit flex-1 p-2 border border-green-500 rounded-md bg-green-300">Add Note</button>
+        <div class="title-type flex items-center justify-between pt-3 gap-x-2">
+            <div class="input-title flex-10">
+              <input type="text" placeholder="Note Title" id="input-note-title"
+              class="title0 flex-1 p-2 border rounded-md border-gray-300 outline-none">
+            </div>
+            <div class="selection flex-1 p-2 border rounded-md border-gray-300 outline-none">
+                <select name="type" class="level">
+                <option value="">Type</option>
+                <option value="Important">Important</option>
+                <option value="study">Study</option>
+                <option value="work">Work</option>
+                <option value="personal">Personal</option>
+                </select>
+            </div>
         </div>
 
-    </form>
+        
+        <div class="Description flex items-center justify-between pt-3 gap-x-2">
+            <input type="text" placeholder="Note Description" id="input-note-desc"
+                class="add-desc flex-10 p-2 border rounded-md border-gray-300 outline-none">
+            <button class="submit flex-1 p-2 border border-green-500 rounded-md bg-green-300">Add Note</button>
+        </div>
+        
+    </form class="note-form">
+    <section id="tab" class="tabs flex item-center gap-x-10 justify-center pt-5">
+        <div id="all-notes" class="searchTabs border-b-2"><p>All Notes</p>
+        </div>
+        <div id="important" class="searchTabs "><p>Important</p>
+        </div>
+        <div id="study" class="searchTabs "><p>Study</p>
+        </div>
+        <div id="personal" class="searchTabs "><p>Personal</p>
+        </div>
+        <div id="work" class="searchTabs"><p>work</p>
+        </div>
+    </section>
+    <div class="note-list grid grid-cols-3 gap-4 p-5 mt-5"></div>
 
     <script src="script.js"></script>
 </body>
