@@ -1,4 +1,3 @@
-
 let notes = [
     {
         name: "Project Deadline",
@@ -12,15 +11,17 @@ let notes = [
     }
 ];
 
+
 const noteForm = document.querySelector(".note-form");
 const addNote = document.querySelector(".note-list");
 
 function renderNotes(noteList) {//create funtion
 
     const color = noteList.level === "Important" ? "bg-red-500 text-white border-red-500" :
-        noteList.level === "Study" ? "bg-fuchsia-800 text-white border-fuchisa-800" :
-            noteList.level === "Work" ? "bg-lime-500 border-lime-500" :
-                "bg-cyan-500 text-white-border-blue-500";
+            noteList.level === "personal" ? "bg-lime-500 border-lime-500" :
+            noteList.level === "Study" ? "bg-blue-800 text-white border-blue-800" :
+             "bg-gray-500 text-white border-blue-500";
+                
 
     const taskHTML = `
     <div class="noteCard border rounded-md p-5 border-gray-400">
@@ -35,10 +36,11 @@ function renderNotes(noteList) {//create funtion
     addNote.innerHTML += taskHTML;
 }
 notes.forEach(noteList => renderNotes(noteList));
+
 noteForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const title = document.querySelector(".title");
+    const title = document.querySelector(".note-title");
     const addDesc = document.querySelector(".add-desc");
     const addLevel = document.querySelector(".level");
 
@@ -47,8 +49,11 @@ noteForm.addEventListener('submit', (e) => {
         desc: addDesc.value,
         level: addLevel.value
     }
+
     notes.push(newNotes);
+
     renderNotes(newNotes);
+
     title.value = '';
     addDesc.value = '';
     addLevel.value = '';
